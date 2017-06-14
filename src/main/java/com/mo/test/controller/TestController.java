@@ -45,4 +45,10 @@ public class TestController {
         transactionalService.no2noTransactional();
         return "";
     }
+
+    @RequestMapping(value = "6", method = RequestMethod.GET)
+    public String test6() {
+        transactionalService.otherServiceTransactional();
+        return "";
+    }
 }

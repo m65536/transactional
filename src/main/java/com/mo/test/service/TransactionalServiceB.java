@@ -2,7 +2,6 @@ package com.mo.test.service;
 
 import com.mo.test.mapper.MyBatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,13 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by MoXingwang on 2017/6/13.
  */
 @Service
-public class TransactionalService {
+public class TransactionalServiceB {
 
     @Autowired
     private MyBatisTest myBatisTest;
-
-    @Autowired
-    private TransactionalServiceB transactionalServiceB;
 
     @Transactional
     public void onTransactional(){
@@ -57,12 +53,6 @@ public class TransactionalService {
 
     public void no2noTransactional(){
         noTransactional();
-        System.out.println();
-
-    }
-
-    public void otherServiceTransactional(){
-        transactionalServiceB.onTransactional();
         System.out.println();
 
     }
