@@ -1,6 +1,7 @@
 package com.mo.test.service;
 
 import com.mo.test.mapper.MyBatisTest;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -65,5 +66,11 @@ public class TransactionalService {
         transactionalServiceB.onTransactional();
         System.out.println();
 
+    }
+
+    public void proxy(){
+        ((TransactionalService) AopContext.currentProxy()).onTransactional();
+
+        System.out.println();
     }
 }
